@@ -94,7 +94,11 @@ function solve(boardString) {
  * Возвращает булевое значение — решено это игровое поле или нет.
  */
 function isSolved(board) {
-
+  let res = 0;
+  board.map(el => {
+    res += el.reduce((acc, num) => Number(acc) + Number(num), 0) 
+  })
+  return res === 405;
 }
 
 /**
